@@ -5,8 +5,9 @@ class BSTNode:
         self.val = val
 
     def insert(self, val):
-        if not self.val:
+        if self.val == None:
             self.val = val
+            return
 
         if val < self.val:
             if self.left:
@@ -27,7 +28,19 @@ class BSTNode:
             current = current.left
         return current.val
 
+    def get_min_value_node(self):
+        current = self
+        while current.left is not None:
+            current = current.left
+        return current
+
     def get_max(self):
+        current = self
+        while current.right is not None:
+            current = current.right
+        return current.val
+
+    def get_max_value_node(self):
         current = self
         while current.right is not None:
             current = current.right
@@ -38,12 +51,12 @@ class BSTNode:
             return self
 
         if val < self.val:
-            if self.left:
+            if self.left != None:
                 self.left = self.left.delete(val)
             return self
 
         if val > self.val:
-            if self.right:
+            if self.right != None:
                 self.right.delete(val)
             return self
 

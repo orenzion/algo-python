@@ -1,8 +1,8 @@
-from binarySeatchTree import BSTNode
+from BST2 import Node
 
 if __name__ == "__main__":
     nums = [12, 6, 18, 19, 21, 11, 3, 5, 4, 24, 18]
-    bst = BSTNode()
+    bst = Node()
     for num in nums:
         bst.insert(num)
 
